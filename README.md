@@ -121,6 +121,51 @@ BShift uses a JSON configuration file located at `C:\bshift\bshift.json`. The co
 
 ---
 
+## 📋 Additional Configuration Examples
+
+### Different Shift Button Options
+
+```json
+{
+  "profiles": [
+    {
+      "name": "Mouse Button Shift",
+      "description": "Use mouse rapid-fire button as shift",
+      "shiftButton": "13",
+      "buttonMappings": { /* ... */ }
+    },
+    {
+      "name": "G Key Shift", 
+      "description": "Use 'G' key as shift modifier",
+      "shiftButton": "g",
+      "buttonMappings": { /* ... */ }
+    },
+    {
+      "name": "Function Key Shift",
+      "description": "Use F12 key as shift modifier", 
+      "shiftButton": "F12",
+      "buttonMappings": { /* ... */ }
+    },
+    {
+      "name": "Space Bar Shift",
+      "description": "Use space bar as shift modifier",
+      "shiftButton": "Space", 
+      "buttonMappings": { /* ... */ }
+    }
+  ]
+}
+```
+
+### Example Use Cases
+
+- **"13"** - Traditional G600-style using the rapid-fire button
+- **"g"** - Popular for MMO games where G is not used for gameplay
+- **"F12"** - Function key that's rarely used in games
+- **"Space"** - For applications where space bar can be dedicated to shifting
+- **"Ctrl"** - Use Ctrl key as a modifier (careful with conflicts)
+
+---
+
 ## 🛠️ Building the Project
 
 ### Requirements
