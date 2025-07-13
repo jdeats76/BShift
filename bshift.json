@@ -3,7 +3,7 @@
     {
       "name": "Default",
       "description": "For everyday productivity use.",
-      "shiftButton": 13,
+      "shiftButton": "13",
       "buttonMappings": {
         "Button1": "Ctrl+C",
         "Button2": "Ctrl+V",
@@ -35,7 +35,7 @@
     {
       "name": "MMO Game",
       "description": "For use in World of Warcraft or Final Fantasy XIV.",
-      "shiftButton": 13,
+      "shiftButton": "g",
       "buttonMappings": {
         "Button1": "1",
         "Button2": "2",

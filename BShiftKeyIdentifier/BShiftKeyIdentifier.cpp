@@ -80,7 +80,7 @@ int main() {
                 }
             }
             prevState[vk] = keyState;
-        }
+        }   
         Sleep(10);
     }
 }

@@ -42,7 +42,7 @@ BShift uses a JSON configuration file located at `C:\bshift\bshift.json`. The co
     {
       "name": "Default",
       "description": "For everyday productivity use.",
-      "shiftButton": 13,
+      "shiftButton": "13",
       "buttonMappings": {
         "Button1": "Ctrl+C",
         "Button2": "Ctrl+V",
@@ -74,7 +74,7 @@ BShift uses a JSON configuration file located at `C:\bshift\bshift.json`. The co
     {
       "name": "MMO Game",
       "description": "For use in World of Warcraft or Final Fantasy XIV.",
-      "shiftButton": 13,
+      "shiftButton": "g",
       "buttonMappings": {
         "Button1": "1",
         "Button2": "2",
@@ -110,9 +110,14 @@ BShift uses a JSON configuration file located at `C:\bshift\bshift.json`. The co
 ### 📝 Configuration Notes
 
 - **Buttons 1-12**: Primary button mappings
-- **Buttons 13-24**: Alternate mappings when holding the shift button (typically the "Rapid Fire" button)
-- **shiftButton**: The button number that acts as the G-Shift modifier (usually button 13)
-- **Supported Keys**: Standard keys, key combinations (Ctrl+C), media keys (MediaPlayPause), and Windows keys (Win+D)
+- **Buttons 13-24**: Alternate mappings when holding the shift button/key
+- **shiftButton**: The button number (e.g., "13") or keyboard key (e.g., "g", "F1", "Space") that acts as the G-Shift modifier
+- **Supported Shift Keys**: 
+  - **Mouse buttons**: Numeric values like "13", "14", etc.
+  - **Keyboard keys**: Single letters ("a"-"z"), numbers ("0"-"9")
+  - **Special keys**: "Space", "Tab", "Enter", "Escape", "Shift", "Ctrl", "Alt", "Win"
+  - **Function keys**: "F1" through "F12"
+- **Supported Key Mappings**: Standard keys, key combinations (Ctrl+C), media keys (MediaPlayPause), and Windows keys (Win+D)
 
 ---
 

@@ -6,6 +6,7 @@
 #include <fstream>
 #include <thread>
 #include <unordered_map>
+#include <cctype>
 #include <nlohmann/json.hpp> // Requires nlohmann JSON library
 
 using json = nlohmann::json;
@@ -17,7 +18,59 @@ HANDLE g_ServiceStopEvent = INVALID_HANDLE_VALUE;
 std::unordered_map<int, std::string> g_ButtonMappings;
 bool g_ServiceEnabled = true;
 bool g_RapidFireHeld = false; // G-Shift state
-int g_ShiftButtonId = 13; // Default, can be overridden per profile
+std::string g_ShiftButton = "13"; // Default shift button, can be mouse button number or keyboard key
+int g_ShiftButtonId = 13; // Parsed button ID for mouse buttons
+int g_ShiftKeyCode = 0; // Virtual key code for keyboard keys
+
+// Convert key string to virtual key code
+int GetVirtualKeyCode(const std::string& key) {
+    if (key.length() == 1) {
+        char c = std::toupper(key[0]);
+        if (c >= 'A' && c <= 'Z') {
+            return c; // A-Z keys
+        }
+        if (c >= '0' && c <= '9') {
+            return c; // 0-9 keys
+        }
+    }
+    
+    // Handle special keys
+    if (key == "Space") return VK_SPACE;
+    if (key == "Tab") return VK_TAB;
+    if (key == "Enter") return VK_RETURN;
+    if (key == "Escape") return VK_ESCAPE;
+    if (key == "Shift") return VK_SHIFT;
+    if (key == "Ctrl") return VK_CONTROL;
+    if (key == "Alt") return VK_MENU;
+    if (key == "Win") return VK_LWIN;
+    
+    // Function keys
+    if (key.substr(0, 1) == "F" && key.length() <= 3) {
+        int fNum = std::stoi(key.substr(1));
+        if (fNum >= 1 && fNum <= 12) {
+            return VK_F1 + (fNum - 1);
+        }
+    }
+    
+    return 0; // Invalid key
+}
+
+// Parse shift button configuration (supports both numeric button IDs and keyboard keys)
+void ParseShiftButton(const std::string& shiftButtonConfig) {
+    g_ShiftButton = shiftButtonConfig;
+    g_ShiftButtonId = 0;
+    g_ShiftKeyCode = 0;
+    
+    // Try to parse as numeric button ID first
+    try {
+        g_ShiftButtonId = std::stoi(shiftButtonConfig);
+        return; // Successfully parsed as button ID
+    }
+    catch (const std::exception&) {
+        // Not a number, try to parse as keyboard key
+        g_ShiftKeyCode = GetVirtualKeyCode(shiftButtonConfig);
+    }
+}
 
 void LoadConfig(const std::string& profileName) {
     std::ifstream configFile("C:/bshift/bshift.json");
@@ -30,12 +83,17 @@ void LoadConfig(const std::string& profileName) {
         if (profile["name"] == profileName) {
             g_ButtonMappings.clear();
 
-            // Load the shift button ID if defined, otherwise default to 13
+            // Load the shift button configuration - can be numeric (mouse button) or alphanumeric (keyboard key)
             if (profile.contains("shiftButton")) {
-                g_ShiftButtonId = profile["shiftButton"].get<int>();
+                if (profile["shiftButton"].is_string()) {
+                    ParseShiftButton(profile["shiftButton"].get<std::string>());
+                }
+                else if (profile["shiftButton"].is_number()) {
+                    ParseShiftButton(std::to_string(profile["shiftButton"].get<int>()));
+                }
             }
             else {
-                g_ShiftButtonId = 13;
+                ParseShiftButton("13"); // Default to button 13
             }
 
             for (auto& item : profile["buttonMappings"].items()) {
@@ -61,11 +119,25 @@ void InputMonitorThread() {
         if (!g_ServiceEnabled) continue;
 
         // Placeholder: Replace with Raw Input or Interception event capture
-        int simulatedButtonId = 0; // Replace with real value
-        bool isPressed = false;    // Replace with real value
-
-        if (simulatedButtonId == g_ShiftButtonId) {
+        int simulatedButtonId = 0; // Replace with real mouse button value
+        bool isPressed = false;    // Replace with real press state
+        
+        // Check if shift button is pressed (mouse button or keyboard key)
+        bool shiftPressed = false;
+        if (g_ShiftButtonId > 0) {
+            // Mouse button shift
+            shiftPressed = (simulatedButtonId == g_ShiftButtonId && isPressed);
+        }
+        else if (g_ShiftKeyCode > 0) {
+            // Keyboard key shift - check if key is currently pressed
+            shiftPressed = (GetAsyncKeyState(g_ShiftKeyCode) & 0x8000) != 0;
+        }
+        
+        if (g_ShiftButtonId > 0 && simulatedButtonId == g_ShiftButtonId) {
             g_RapidFireHeld = isPressed;
+        }
+        else if (g_ShiftKeyCode > 0) {
+            g_RapidFireHeld = shiftPressed;
         }
         else if (IsSideButton(simulatedButtonId) && isPressed) {
             int mapIndex = g_RapidFireHeld ? simulatedButtonId + 12 : simulatedButtonId;
