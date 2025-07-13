@@ -214,7 +214,6 @@ This will:
 BShift is designed to work with any programmable MMO mouse, with particular focus on:
 
 - **Redragon M908 Impact** ⭐ (Primary target)
-- **Logitech G600** (Inspiration for G-Shift functionality)
 - **Other 12+ button MMO mice** with programmable side buttons
 
 ---
@@ -242,7 +241,6 @@ BShift is designed to work with any programmable MMO mouse, with particular focu
 Built with ❤️ by [jdeats76](https://github.com/jdeats76) to revive the beloved G600 experience on modern MMO mice.
 
 **Special Thanks:**
-- Logitech for the original G-Shift concept
 - The MMO gaming community for inspiration
 - Open-source contributors who make projects like this possible
 
