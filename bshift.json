@@ -1,0 +1,68 @@
+{
+  "profiles": [
+    {
+      "name": "Default",
+      "description": "For everyday productivity use.",
+      "shiftButton": 13,
+      "buttonMappings": {
+        "Button1": "Ctrl+C",
+        "Button2": "Ctrl+V",
+        "Button3": "Ctrl+Z",
+        "Button4": "Ctrl+Y",
+        "Button5": "Alt+Tab",
+        "Button6": "Ctrl+T",
+        "Button7": "Ctrl+W",
+        "Button8": "Win+D",
+        "Button9": "MediaPlayPause",
+        "Button10": "MediaNextTrack",
+        "Button11": "MediaPrevTrack",
+        "Button12": "VolumeMute",
+
+        "Button13": "Ctrl+Shift+C",
+        "Button14": "Ctrl+Shift+V",
+        "Button15": "Ctrl+Shift+Z",
+        "Button16": "Ctrl+Shift+Y",
+        "Button17": "Win+Tab",
+        "Button18": "Ctrl+Shift+T",
+        "Button19": "Alt+F4",
+        "Button20": "Win+E",
+        "Button21": "MediaStop",
+        "Button22": "VolumeDown",
+        "Button23": "VolumeUp",
+        "Button24": "PrintScreen"
+      }
+    },
+    {
+      "name": "MMO Game",
+      "description": "For use in World of Warcraft or Final Fantasy XIV.",
+      "shiftButton": 13,
+      "buttonMappings": {
+        "Button1": "1",
+        "Button2": "2",
+        "Button3": "3",
+        "Button4": "4",
+        "Button5": "5",
+        "Button6": "6",
+        "Button7": "Q",
+        "Button8": "E",
+        "Button9": "R",
+        "Button10": "F",
+        "Button11": "Z",
+        "Button12": "X",
+
+        "Button13": "Shift+1",
+        "Button14": "Shift+2",
+        "Button15": "Shift+3",
+        "Button16": "Shift+4",
+        "Button17": "Shift+5",
+        "Button18": "Shift+6",
+        "Button19": "Shift+Q",
+        "Button20": "Shift+E",
+        "Button21": "Shift+R",
+        "Button22": "Shift+F",
+        "Button23": "Shift+Z",
+        "Button24": "Shift+X"
+      }
+    }
+  ]
+}

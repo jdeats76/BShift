@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BShiftService", "BShiftService\BShiftService.vcxproj", "{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BShiftTrayApp", "BShiftTrayApp\BShiftTrayApp.vcxproj", "{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{2E27DDBC-ED1B-43E9-9943-811E07410277}"
+	ProjectSection(SolutionItems) = preProject
+		Install-BShift.ps1 = Install-BShift.ps1
+		Uninstall-BShift.ps1 = Uninstall-BShift.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{F8E71736-B9CE-4E09-8CF2-79C392C777CD}"
+	ProjectSection(SolutionItems) = preProject
+		bshift.json = bshift.json
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BShiftKeyIdentifier", "BShiftKeyIdentifier\BShiftKeyIdentifier.vcxproj", "{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Debug|x64.ActiveCfg = Debug|x64
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Debug|x64.Build.0 = Debug|x64
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Debug|x86.ActiveCfg = Debug|Win32
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Debug|x86.Build.0 = Debug|Win32
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Release|x64.ActiveCfg = Release|x64
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Release|x64.Build.0 = Release|x64
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Release|x86.ActiveCfg = Release|Win32
+		{2A3EBBC4-91AE-485B-A5D5-3023CD7B374B}.Release|x86.Build.0 = Release|Win32
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Debug|x64.ActiveCfg = Debug|x64
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Debug|x64.Build.0 = Debug|x64
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Debug|x86.ActiveCfg = Debug|Win32
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Debug|x86.Build.0 = Debug|Win32
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Release|x64.ActiveCfg = Release|x64
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Release|x64.Build.0 = Release|x64
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Release|x86.ActiveCfg = Release|Win32
+		{0D2F9656-1E57-4ABF-A7F9-C431AC1D356D}.Release|x86.Build.0 = Release|Win32
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Debug|x64.ActiveCfg = Debug|x64
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Debug|x64.Build.0 = Debug|x64
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Debug|x86.Build.0 = Debug|Win32
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Release|x64.ActiveCfg = Release|x64
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Release|x64.Build.0 = Release|x64
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Release|x86.ActiveCfg = Release|Win32
+		{93ADFF23-F6EB-4DFD-8F12-1E6D282249AD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F479278E-B1EE-4A90-92A5-B6125754A2EE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,77 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.dbmdl
+*.VC.db
+*.VC.opendb
+*.ipch
+*.obj
+*.log
+*.vsidx
+*.tmp_proj
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Build Results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.nupkg
+
+# Publish
+publish/
+*.publish.xml
+
+# NuGet
+*.nupkg
+.nuget/
+packages/
+*.snupkg
+
+# Logs
+*.log
+
+# Rider IDE
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Git
+*.orig
+
+# Others
+*.tmp
+*.bak
+*.swp
